@@ -9,7 +9,7 @@ export const fetchVideoCategories = fetchEntity.bind(null, api.buildVideoCategor
 
 export function* fetchMostPopularVideosByCategory(categories) {
   const requests = categories.map(categoryId => {
-    const wrapper = ignoreErrors(api.buildMostPopularVideosRequest, 12, false, null, categoryId);
+    const wrapper = ignoreErrors(api.buildMostPopularVideosRequest, 4, false, null, categoryId);
     return call(wrapper);
   });
   try {

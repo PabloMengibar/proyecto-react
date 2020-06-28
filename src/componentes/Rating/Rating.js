@@ -4,7 +4,7 @@ import {Icon, Progress} from "semantic-ui-react";
 import {getShortNumberString} from '../../services/number/number-format';
 
 export function Rating(props) {
-  let rating = null;
+  let likes = null;
   let likeCount = props.likeCount !== 0 ? props.likeCount : null;
   let dislikeCount = null;
 
@@ -14,10 +14,10 @@ export function Rating(props) {
     const percentagePositiveRatings = 100.0 * (amountLikes / (amountLikes + amountDislikes));
     likeCount = getShortNumberString(amountLikes);
     dislikeCount = getShortNumberString(amountDislikes);
-    rating = <Progress percent={percentagePositiveRatings} size='tiny'/>;
+    likes = <Progress percent={percentagePositiveRatings} size='tiny'/>;
   }
   return (
-    <div className='rating'>
+    <div className='likes'>
       <div >
         <Icon name='thumbs outline up'/>
         <span>{likeCount}</span>
@@ -26,7 +26,7 @@ export function Rating(props) {
         <Icon name='thumbs outline down'/>
         <span>{dislikeCount}</span>
       </div>
-      {rating}
+      {likes}
     </div>
   );
 }

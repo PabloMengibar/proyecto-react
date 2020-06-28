@@ -1,7 +1,7 @@
 import React from 'react';
 import {CommentsHeader} from "./CabezeraComentario/CabezeraComentario";
 import {Comment} from './Comentario/Comentario';
-import {AddComment} from './AddComentario/AddComentario';
+
 
 export class Comments extends React.Component {
   render() {
@@ -16,7 +16,7 @@ export class Comments extends React.Component {
     return(
       <div>
         <CommentsHeader amountComments={this.props.amountComments}/>
-        <AddComment key='add-comment'/>
+
         {comments}
       </div>
     );

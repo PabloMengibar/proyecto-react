@@ -1,14 +1,13 @@
 import React from 'react';
 import {VideoPreview} from '../VideoPreview/VideoPreview';
 import './RelatedVideos.scss';
-import {NextUpVideo} from './NextUpVideo/NextUpVideo';
+
 
 export function RelatedVideos(props) {
   if (!props.videos || !props.videos.length) {
     return <div className='related-videos'/>;
   }
 
-  const nextVideo = props.videos[0];
   const restante = props.videos.slice(1);
 
   const relatedVideoPreviews = restante.map(relatedVideo => (
@@ -21,7 +20,6 @@ export function RelatedVideos(props) {
 
   return (
     <div className='related-videos'>
-      <NextUpVideo video={nextVideo}/>
       {relatedVideoPreviews}
     </div>
   );
