@@ -1,5 +1,4 @@
 import React from 'react';
-import './Search.scss';
 import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
 import {getSearchNextPageToken, getSearchResults} from '../../store/reducers/search';
 import * as searchActions from '../../store/actions/search';

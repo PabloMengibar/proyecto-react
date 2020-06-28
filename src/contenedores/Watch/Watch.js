@@ -16,7 +16,7 @@ export class Watch extends React.Component {
     const videoId = this.getVideoId();
     return (
       <WatchContent videoId={videoId} channelId={this.props.channelId} bottomReachedCallback={this.fetchMoreComments}
-                    nextPageToken={this.props.nextPageToken}/>
+      nextPageToken={this.props.nextPageToken}/>
     );
   }
 

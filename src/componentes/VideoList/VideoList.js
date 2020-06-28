@@ -30,7 +30,7 @@ export class VideoList extends React.Component {
 
     return this.props.videos.map(video => (
       <VideoPreview horizontal={true} expanded={true} video={video} key={video.id} pathname={'/watch'}
-                    search={'?v=' + video.id}/>)
+      search={'?v=' + video.id}/>)
     );
   }
 

@@ -1,6 +1,3 @@
-// http://www.mademyday.de/css-height-equals-width-with-pure-css.html
-// https://stackoverflow.com/questions/17621181/how-is-padding-top-as-a-percentage-related-to-the-parents-width
-// https://alistapart.com/article/creating-intrinsic-ratios-for-video
 .video-container {
   position: relative;
   width: 100%;
@@ -8,7 +5,7 @@
   &:before {
     content: "";
     display: block;
-    padding-top: 56.25%; // 9 / 16 in percent
+    padding-top: 56.25%; 
   }
 
   .video {
