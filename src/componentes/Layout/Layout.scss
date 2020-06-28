@@ -1,0 +1,12 @@
+@import '../../styles/shared.scss';
+
+.app-layout {
+  background-color: rgb(22, 22, 22);
+  & > *:not(:first-child) {
+    margin-top: $header-nav-height;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../styles/shared.scss';
+
+.video-metadata {
+    color: #fafafa;
+    font-size: 16px;
+
+    h3 {
+        font-weight: 400;
+        color: white;
+    }
+
+    .video-stats {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .video-actions {
+            display: flex;
+            align-items: center;
+            & > *:not(:last-child) {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+.video-info .video-preview-metadata-container {
+    font-size: 13px;
+    color: #FFF;
+}
+.ui.progress .bar{
+    color: white;
+}
