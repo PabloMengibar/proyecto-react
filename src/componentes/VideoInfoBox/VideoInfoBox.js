@@ -18,27 +18,34 @@ export class VideoInfoBox extends React.Component {
       return <div/>;
     }
 
+
     const descriptionParagraphs = this.getDescriptionParagraphs();
     const {descriptionTextClass, buttonTitle} = this.getConfig();
     const publishedAtString = getPublishedAtDateString(this.props.video.snippet.publishedAt);
-
     const {channel} = this.props;
     const channelThumbnail = channel.snippet.thumbnails.medium.url;
     const channelTitle = channel.snippet.title;
+
 
     return (
       <div>
         <div className='video-info-box'>
           <Image className='channel-image' src={channelThumbnail} circular/>
+
           <div className="video-info">
             <div className='channel-name'>{channelTitle}</div>
             <div className='video-publication-date'>{publishedAtString}</div>
+
           </div>
+
           <div className="video-description">
+
             <div className={descriptionTextClass}>
               {descriptionParagraphs}
             </div>
+
             <Button compact onClick={this.onToggleCollapseButtonClick}>{buttonTitle}</Button>
+
           </div>
         </div>
         <Divider/>
@@ -56,22 +63,24 @@ export class VideoInfoBox extends React.Component {
 
   getDescriptionParagraphs() {
     const videoDescription = this.props.video.snippet ? this.props.video.snippet.description : null;
-    if (!videoDescription) {
-      return null;
+
+      if (!videoDescription) {
+        return null;
+      }
+      return videoDescription.split('\n').map((paragraph, index) => <p key={index}><Linkify>{paragraph}</Linkify></p>);
     }
-    return videoDescription.split('\n').map((paragraph, index) => <p key={index}><Linkify>{paragraph}</Linkify></p>);
-  }
 
   getConfig() {
     let descriptionTextClass = 'collapsed';
     let buttonTitle = 'Ver mas';
-    if (!this.state.collapsed) {
-      descriptionTextClass = 'expanded';
-      buttonTitle = 'Cerrar';
+
+      if (!this.state.collapsed) {
+        descriptionTextClass = 'expanded';
+        buttonTitle = 'Cerrar';
+      }
+      return {
+        descriptionTextClass,
+        buttonTitle
+      };
     }
-    return {
-      descriptionTextClass,
-      buttonTitle
-    };
   }
-}

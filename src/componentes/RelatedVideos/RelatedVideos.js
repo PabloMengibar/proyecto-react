@@ -11,12 +11,7 @@ export function RelatedVideos(props) {
   const restante = props.videos.slice(1);
 
   const relatedVideoPreviews = restante.map(relatedVideo => (
-      <VideoPreview video={relatedVideo}
-                    key={relatedVideo.id}
-                    pathname='/watch'
-                    search={`?v=${relatedVideo.id}`}
-                    horizontal={true}/>
-  ));
+      <VideoPreview video={relatedVideo}key={relatedVideo.id}pathname='/watch'search={`?v=${relatedVideo.id}`}horizontal={true}/>));
 
   return (
     <div className='related-videos'>

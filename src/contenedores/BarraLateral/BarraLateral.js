@@ -1,24 +1,28 @@
 import React from 'react';
-import SideBarItem from './Item/Item';
+import Item from './Item/Item';
 import {Menu, Divider} from 'semantic-ui-react';
 import './BarraLateral.scss';
-import {Subscriptions} from './Subs/Subs';
+import {Subs} from './Subs/Subs';
 
 
-export class SideBar extends React.Component {
+export class Lateral extends React.Component {
   render() {
     return (
       <Menu borderless vertical stackable fixed='left' className='side-nav'>
-        <SideBarItem path='/' label='Home' icon='home'/>
-        <SideBarItem path='/feed/tendencias' label='Tendencias' icon='fire'/>
-        <SideBarItem label='FBI' icon='spy'/>
+
+        <Item path='/' label='Home' icon='home'/>
+        <Item path='/feed/tendencias' label='Tendencias' icon='fire'/>
+        <Item label='FBI' icon='spy'/>
         <Divider/>
-        <SideBarItem label='Historial' icon='history'/>
-        <SideBarItem label='Mirar más tarde' icon='clock'/>
-        <SideBarItem label='No mirar nunca' icon='low vision'/>
-        <SideBarItem label='Videos que me gustan' icon='thumbs up'/>
+
+        <Item label='Historial' icon='history'/>
+        <Item label='Mirar más tarde' icon='clock'/>
+        <Item label='No mirar nunca' icon='low vision'/>
+        <Item label='Videos que me gustan' icon='thumbs up'/>
         <Divider/>
-        <Subscriptions/>
+
+        <Subs/>
+
       </Menu>
     );
   }

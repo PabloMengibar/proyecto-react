@@ -9,12 +9,12 @@ import {connect} from 'react-redux';
 import {getChannel} from '../../../store/reducers/channels';
 import {getCommentsForVideo} from '../../../store/reducers/comments';
 import {InfiniteScroll} from '../../../componentes/Scroll/Scroll';
-import './WatchContent.scss';
+import './WatchCon.scss';
 
 
 
 
-class WatchContent extends React.Component {
+class WatchCon extends React.Component {
   render() {
     if (!this.props.videoId) {
       return <div/>
@@ -52,4 +52,4 @@ function mapStateToProps(state, props) {
 
 
 
-export default connect(mapStateToProps, null)(WatchContent);
+export default connect(mapStateToProps, null)(WatchCon);

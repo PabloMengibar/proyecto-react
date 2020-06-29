@@ -9,7 +9,7 @@ import {youtubeLibraryLoaded} from './store/actions/api';
 import {AppLayout} from './componentes/Layout/Layout';
 import {Route, Switch, withRouter} from 'react-router-dom';
 
-const YTKEY = 'AIzaSyBUb7uRvJusBUtgTzepAi2u5PmtQ84sDmo';
+const YTKEY = 'AIzaSyA6VeE2TQNDoTEI1fqqgV4MqOR26wkezMc';
 
 
 

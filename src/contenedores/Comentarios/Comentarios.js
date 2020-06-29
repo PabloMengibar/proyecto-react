@@ -1,6 +1,6 @@
 import React from 'react';
-import {CommentsHeader} from "./CabezeraComentario/CabezeraComentario";
-import {Comment} from './Comentario/Comentario';
+import {Cabesa} from "./CabezeraComentario/CabezeraComentario";
+import {Coment} from './Comentario/Comentario';
 
 
 export class Comments extends React.Component {
@@ -10,12 +10,12 @@ export class Comments extends React.Component {
     }
 
     const comments = this.props.comments.map((comment) => {
-      return <Comment comment={comment} key={comment.id}/>
+      return <Coment comment={comment} key={comment.id}/>
     });
 
     return(
       <div>
-        <CommentsHeader amountComments={this.props.amountComments}/>
+        <Cabesa amountComments={this.props.amountComments}/>
 
         {comments}
       </div>

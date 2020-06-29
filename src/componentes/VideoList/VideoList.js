@@ -1,5 +1,5 @@
 import React from 'react';
-import {SideBar} from '../../contenedores/BarraLateral/BarraLateral';
+import {Lateral} from '../../contenedores/BarraLateral/BarraLateral';
 import {InfiniteScroll} from '../Scroll/Scroll';
 import './VideoList.scss';
 import {VideoPreview} from '../VideoPreview/VideoPreview';
@@ -9,11 +9,13 @@ export class VideoList extends React.Component {
     const videoPreviews = this.getVideoPreviews();
     return (
       <React.Fragment>
-        <SideBar/>
+        <Lateral/>
         <div className='video-list'>
+
           <InfiniteScroll bottomReachedCallback={this.props.bottomReachedCallback} showLoader={this.props.showLoader}>
             {videoPreviews}
           </InfiniteScroll>
+          
         </div>
       </React.Fragment>
     );
@@ -22,9 +24,11 @@ export class VideoList extends React.Component {
 
 
   getVideoPreviews() {
+
     if(!this.props.videos || !this.props.videos.length) {
       return null;
     }
+
     const firstVideo = this.props.videos[0];
     if (!firstVideo.snippet.description) {return null}
 

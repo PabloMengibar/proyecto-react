@@ -26,15 +26,13 @@ export function* fetchMostPopularVideos(amount, loadDescription, nextPageToken) 
 }
 
 
-
-
-
 export function* watchMostPopularVideos() {
   while (true) {
     const {amount, loadDescription, nextPageToken} = yield take(videoActions.MOST_POPULAR[REQUEST]);
     yield fork(fetchMostPopularVideos, amount, loadDescription, nextPageToken);
   }
 }
+
 
 export function* watchVideoCategories() {
   yield takeEvery(videoActions.VIDEO_CATEGORIES[REQUEST], fetchVideoCategories);

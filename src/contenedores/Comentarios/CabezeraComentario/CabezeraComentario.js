@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from "semantic-ui-react";
 import './CabezeraComentario.scss';
 
-export function CommentsHeader(props) {
+export function Cabesa(props) {
   return (
     <div className='comments-header'>
       <h4>{props.amountComments} Comentarios</h4>

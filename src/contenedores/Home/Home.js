@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from "react-redux";
 import * as videoActions from "../../store/actions/video";
 import './Home.scss';
-import {SideBar} from '../BarraLateral/BarraLateral';
-import HomeContent from './HomeContenido/HomeCon';
+import {Lateral} from '../BarraLateral/BarraLateral';
+import HomeCon from './HomeContenido/HomeCon';
 import {bindActionCreators} from 'redux';
 import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
 import {getVideoCategoryIds, videoCategoriesLoaded, videosByCategoryLoaded} from '../../store/reducers/videos';
@@ -19,8 +19,8 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <SideBar/>
-        <HomeContent
+        <Lateral/>
+        <HomeCon
           bottomReachedCallback={this.bottomReachedCallback}
           showLoader={this.shouldShowLoader()}/>
       </React.Fragment>

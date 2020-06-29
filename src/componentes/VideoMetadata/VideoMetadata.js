@@ -7,6 +7,7 @@ export function VideoMetadata(props) {
   if (!props.video || !props.video.statistics) {
     return <div/>;
   }
+
   const viewCount = Number(props.video.statistics.viewCount).toLocaleString();
 
   return (
@@ -15,9 +16,9 @@ export function VideoMetadata(props) {
       <div className='video-stats'>
         <span>{viewCount} visitas</span>
         <div className='video-actions' >
-          <Rating likeCount={props.video.statistics.likeCount}
-                  dislikeCount={props.video.statistics.dislikeCount}/>
-     
+          
+          <Rating likeCount={props.video.statistics.likeCount}dislikeCount={props.video.statistics.dislikeCount}/>
+  
         </div>
       </div>
       <Divider/>

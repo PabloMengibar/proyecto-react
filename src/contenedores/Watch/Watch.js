@@ -4,7 +4,7 @@ import * as watchActions from '../../store/actions/watch';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
-import WatchContent from './WatchContent/WatchContent';
+import WatchCon from './WatchCon/WatchCon';
 import {getSearchParam} from '../../services/url';
 import {getChannelId} from '../../store/reducers/videos';
 import {getCommentNextPageToken} from '../../store/reducers/comments';
@@ -15,20 +15,20 @@ export class Watch extends React.Component {
   render() {
     const videoId = this.getVideoId();
     return (
-      <WatchContent videoId={videoId} channelId={this.props.channelId} bottomReachedCallback={this.fetchMoreComments}
+      <WatchCon videoId={videoId} channelId={this.props.channelId} bottomReachedCallback={this.fetchMoreComments}
       nextPageToken={this.props.nextPageToken}/>
     );
   }
 
   componentDidMount() {
     if (this.props.youtubeLibraryLoaded) {
-      this.fetchWatchContent();
+      this.fetchWatchCon();
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
-      this.fetchWatchContent();
+      this.fetchWatchCon();
     }
   }
 
@@ -36,7 +36,7 @@ export class Watch extends React.Component {
     return getSearchParam(this.props.location, 'v');
   }
 
-  fetchWatchContent() {
+  fetchWatchCon() {
     const videoId = this.getVideoId();
     if (!videoId) {
       this.props.history.push('/');

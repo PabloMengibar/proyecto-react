@@ -3,7 +3,7 @@ import './Comentario.scss';
 import {Image} from "semantic-ui-react";
 import {Rating} from '../../../componentes/Rating/Rating';
 
-export function Comment(props) {
+export function Coment(props) {
   if (!props.comment) {
     return <div/>;
   }
@@ -14,6 +14,7 @@ export function Comment(props) {
   return (
     <div className='comment'>
       <Image className='user-image' src={authorProfileImageUrl} circular />
+
       <div>
         <div className='user-name'>{authorDisplayName}</div>
         <span>{textOriginal}</span>
@@ -21,6 +22,7 @@ export function Comment(props) {
           <Rating likeCount={likeCount}/> 
         </div>
       </div>
+
     </div>
   );
 }

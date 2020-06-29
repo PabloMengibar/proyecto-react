@@ -5,9 +5,9 @@ import {connect} from 'react-redux';
 import {InfiniteScroll} from '../../../componentes/Scroll/Scroll';
 import {VideoGrid} from '../../../componentes/VideoGrid/VideoGrid';
 
-const AMOUNT_TRENDING_VIDEOS = 8;
+const videosTrending = 8;
 
-export class HomeContent extends React.Component {
+export class HomeCon extends React.Component {
   render() {
     const trendingVideos = this.getTrendingVideos();
     const categoryGrids = this.getVideoGridsForCategories();
@@ -25,7 +25,7 @@ export class HomeContent extends React.Component {
   }
 
       getTrendingVideos() {
-        return this.props.mostPopularVideos.slice(0, AMOUNT_TRENDING_VIDEOS);
+        return this.props.mostPopularVideos.slice(0, videosTrending);
       }
 
           getVideoGridsForCategories() {
@@ -50,4 +50,4 @@ function mapStateToProps(state) {
 
 
 
-export default connect(mapStateToProps, null)(HomeContent);
+export default connect(mapStateToProps, null)(HomeCon);
